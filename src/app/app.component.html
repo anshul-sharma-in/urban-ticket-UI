@@ -8,14 +8,22 @@
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/userdetails" class="nav-link" routerLink="userdetails">Users</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/managerdetails" class="nav-link" routerLink="managerdetails">Managers</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/moviedetails" class="nav-link" routerLink="moviedetails">Movies</a>
+      </li>
       <li class="nav-item" *ngIf="showManagerBoard">
         <a href="/mod" class="nav-link" routerLink="mod">Manager Board</a>
       </li>
-      <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      <li class="nav-item" *ngIf="showUserBoard" >
+        <a href="/user" class="nav-link" routerLink="user">User</a>
       </li>
     </ul>
-
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
         <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
@@ -27,7 +35,7 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        <a href="/profile" class="nav-link" routerLink="profile">Welcome, {{ username }}</a>
       </li>
       <li class="nav-item">
         <a href class="nav-link" (click)="logout()">LogOut</a>
@@ -39,3 +47,5 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+
+

@@ -1,0 +1,29 @@
+<table class="table table-info">
+    <thead class="table-warning">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Movie Name</th>
+        <th scope="col">Language</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Manager</th>
+        <!-- <th scope="col">Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let movie of movies">
+        <td> {{ movie.id}}</td>
+        <td> {{movie.name}}</td>
+        <td>{{movie.language }}</td>
+        <td>{{ movie.date}}</td>
+        <td>{{ movie.time}}</td>
+        <td>{{ movie.genre}}</td>
+        <td>{{ }}</td>
+        <!-- <td>
+            <button (click) = "deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+       </td> -->
+      </tr>
+     
+    </tbody>
+  </table>

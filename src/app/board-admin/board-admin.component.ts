@@ -10,6 +10,9 @@ export class BoardAdminComponent implements OnInit {
 
   content: string;
 
+  usertag = false;
+
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
