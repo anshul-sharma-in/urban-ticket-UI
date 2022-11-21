@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
@@ -17,12 +16,14 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   page = false;
+  id : number;
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
+      this.id =this.tokenStorage.getUser().id;
     }
   }
 
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToManagerBoard(): void{
-    this.router.navigate(['/mod']);
+    this.router.navigate(['/mod/' + this.id]);
   }
 
   goToUserBoard(): void{

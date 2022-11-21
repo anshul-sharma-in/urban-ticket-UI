@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../_services/admin.service';
-import {Movie} from '../movie';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  movies : Movie[];
-  constructor(private adminService: AdminService, private router: Router) { }
+  movies : any[];
+  constructor(private adminService: AdminService) { }
 
 
   ngOnInit(): void {
@@ -21,7 +19,14 @@ export class MovieDetailsComponent implements OnInit {
 
   private getMovies(){
     this.adminService.getMoviesList().subscribe(data =>{
-      this.movies = data;
+      this.movies = data;     
+    });
+  }
+
+  public deleteMoviesById(id){
+    this.adminService.deleteMovies(id).subscribe(data =>{
+      console.log(data);
+      window.location.reload();
     });
   }
 

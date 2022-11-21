@@ -4,19 +4,13 @@
 	<title></title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&display=swap" rel="stylesheet">
-
-  <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
- <!-- <link rel="stylesheet" type="text/css" href="css/lightslider.css"> -->
  <script type="text/javascript" src="../../assets/image/JQuery3.3.1.js"></script> 
  <script type="text/javascript" src="../../assets/image/lightslider.js"></script>
-  
 </head>
+
 <body>
-
-
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -25,7 +19,6 @@
   </ul>
 
   <div class="carousel-inner">
-
     <div class="carousel-item active">
       <img src="../../assets/image/s-1.jpg" alt="MET">
     </div>
@@ -48,116 +41,23 @@
 </div>
 
  <!--movies---------------------------->
-   
-        <h2 class="RM">Recommended Movies</h2>
-    
-    <section id="movies-list">
-        <!--box-1------------------------>
-        <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-1.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-         <!--box-2------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-2.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-         <!--box-3------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-3.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-         <!--box-4------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-4.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-         <!--box-5------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-5.jpg">
-            </div>
-            <!--text--------->
-         
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-         <!--box-6------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-6.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-         <!--box-7------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-7.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
+        <h2 class="RM">Running Movies</h2>
          <!--box-8------------------------>
          <div class="movies-box">
             <!--img------------>
-            <div class="movies-img">
-                <div class="quality">HDRip</div>
-                <img src="../../assets/image/l-8.jpg">
-            </div>
-            <!--text--------->
-            <a href="/movie-page" routerLink="movie-page">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
+            <!--movie name--------->
+            <div class="container movies">
+                <div class="row">
+                  <div class="col-4" *ngFor="let movie of movies">
+                        <a [routerLink]="['/moviepage', movie.id]">
+                            <img  class="mimage" src="{{movie.image}}" alt="Image Not Found">
+                        </a>
+                        <h3 class="Mname">{{movie.name}}</h3> 
+                  </div>
+                </div>
+              </div>
         </div>
-    </section>
-<!--btns--------------->
-    <div class="btns">
-        <a href="#">Previous</a>
-        <a href="#">Next</a>
-    </div>
 
-    
-    <!--footer------------------>
     <footer>
         <p>Going To Internet, Ltd Consumer Website</p>
         <p>Copyright 2020 - GoingToInternet</p>

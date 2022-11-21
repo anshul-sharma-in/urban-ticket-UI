@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../_services/admin.service';
 import { UserService } from '../_services/user.service';
 
+const IMG_PATH = '../../assets/image/';
 @Component({
   selector: 'app-board-admin',
   templateUrl: './board-admin.component.html',
@@ -12,10 +14,15 @@ export class BoardAdminComponent implements OnInit {
 
   usertag = false;
 
+  movies : any;
 
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService, private adminService : AdminService) { }
 
   ngOnInit(): void {
+    this.getMovies();
+    console.log(this.movies);
+    
     this.userService.getAdminBoard().subscribe(
       data => {
         this.content = data;
@@ -25,5 +32,19 @@ export class BoardAdminComponent implements OnInit {
       }
     );
   }
+
+  private getMovies(){
+    this.adminService.getMoviesList().subscribe(data =>{
+      this.movies = data;
+      console.log(data);
+      this.movies.forEach(element => {
+        element.image = IMG_PATH + element.image; 
+        this.movies.image = IMG_PATH + element.image;
+        console.log(this.movies.image);
+      });
+    });
+  }
+
+  
 
 }

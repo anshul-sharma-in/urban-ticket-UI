@@ -5,5 +5,5 @@ export class Movie{
     genre: string;
     date: Date;
     time: string;
-    movies: Object;
+    user: string;
 }
