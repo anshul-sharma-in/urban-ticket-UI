@@ -2,10 +2,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
+import { environment } from '../../environments/environment';
 
-const API_URL = 'http://localhost:8080/api/auth/';
+const API_URL = environment.apiUrl + '/auth/';
 
-const API_URL_IMG = 'http://localhost:8080/api/auth/upload/local';
+const API_URL_IMG = environment.apiUrl + '/auth/upload/local';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
