@@ -3,9 +3,9 @@ name: Frontend Deploy
 on:
   push:
     branches: [ main ]
-    workflow_dispatch:
     paths:
       - 'urban-ticket-UI/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
