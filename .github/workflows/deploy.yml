@@ -11,10 +11,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: urban-ticket-UI
-
     steps:
       - uses: actions/checkout@v4
 
